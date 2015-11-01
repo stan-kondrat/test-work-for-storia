@@ -14,7 +14,7 @@ class Post extends Component {
         <div className="Post-title"> {this.props.data.title} </div>
         <div className="Post-storyTitle"> {this.props.data.storyTitle} </div>
         <div className="Post-ownerName"> {this.props.data.owner.name} </div>
-        <PostLike likes={this.props.data.stats.likes} />
+        <PostLike likes={this.props.data.stats.likes} momentId={this.props.data.id} storyId={this.props.data.storyId} />
       </div>
     );
   }

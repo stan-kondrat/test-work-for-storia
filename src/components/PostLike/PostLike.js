@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './PostLike.css';
 import withStyles from '../../decorators/withStyles';
+import request from 'superagent';
 
 @withStyles(styles)
 class PostLike extends Component {
@@ -14,6 +15,14 @@ class PostLike extends Component {
       likes++;
     }
     this.setState({liked: !this.state.liked, likes: likes });
+
+    request.get("/api/feed")
+      .query({ action: this.state.liked?'unlike':'like',
+        storyId: this.props.storyId,
+        momentId: this.props.momentId })
+      .end(function (err, res) {
+        //todo
+      });
   }
   render() {
     return (
