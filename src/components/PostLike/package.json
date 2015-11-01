@@ -1,0 +1,6 @@
+{
+  "name": "PostLike",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PostLike.js"
+}

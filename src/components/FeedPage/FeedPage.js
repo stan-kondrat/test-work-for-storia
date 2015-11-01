@@ -3,6 +3,7 @@
 import React, { PropTypes, Component } from 'react';
 import withStyles from '../../decorators/withStyles';
 import styles from './FeedPage.css';
+import Post from '../Post';
 
 @withStyles(styles)
 class FeedPage extends Component {
@@ -22,9 +23,7 @@ class FeedPage extends Component {
     this.context.onSetTitle(title);
     var postNodes = this.state.items.map(function (post) {
       return (
-        <div>
-          {post.objectPreview.id} - {post.objectPreview.title}
-        </div>
+        <Post data={post.objectPreview} />
       );
     });
 

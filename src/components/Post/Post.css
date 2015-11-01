@@ -1,0 +1,17 @@
+@import '../variables.css';
+
+.Post{
+  padding: 1em;
+  margin-bottom: 2em;
+  box-shadow: 1px 0px 3px grey;
+  position: relative;
+}
+.Post-title{
+  font-size: 1.2em;
+}
+.Post-storyTitle{
+  font-size: 1.5em;
+}
+.Post-ownerName{
+  color: grey;
+}
