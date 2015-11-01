@@ -7,6 +7,8 @@ import App from './components/App';
 import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
+import FeedPage from './components/FeedPage';
+import Qs from 'qs';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -14,6 +16,10 @@ const router = new Router(on => {
     return component && <App context={state.context}>{component}</App>;
   });
 
+  on('/', async (state) => {
+    const content = await http.get(`/api/feed?${Qs.stringify(state.query)}`);
+    return content && <FeedPage {...content} />;
+  });
 
   on('*', async (state) => {
     const content = await http.get(`/api/content?path=${state.path}`);
