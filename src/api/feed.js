@@ -101,9 +101,7 @@ router.get('/', async (req, res, next) => {
       });
 
     } else if(query.action == "like"){
-      console.log("query.action == like");
       like(query.storyId, query.momentId).then(() => {
-        console.log("query.action resolve");
         res.status(200).send({});
       })
 
