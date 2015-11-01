@@ -15,3 +15,7 @@
 .Post-ownerName{
   color: grey;
 }
+
+.Post-image{
+  max-width: 100%;
+}
